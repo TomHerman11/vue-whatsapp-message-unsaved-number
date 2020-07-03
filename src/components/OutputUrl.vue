@@ -1,12 +1,7 @@
 <template>
   <div class="outputUrl">
-    <a
-      v-if="phoneInputResults.isValid"
-      class="link-button"
-      :href="phoneInputResults.isValid ? 'https://api.whatsapp.com/send?phone=' + phoneInputResults.formattedNumber.substring(1) : ''"
-      target="_blank"
-    >Message</a>
-    <p v-else class="link-button">Message</p>
+    <button v-if="phoneInputResults.isValid" class="link-button" v-on:click="onButtonClick">Message</button>
+    <button v-else class="link-button" disabled>Message</button>
   </div>
 </template>
 
@@ -18,6 +13,15 @@ export default {
       type: Object,
       default: () => ({ type: "" })
     }
+  },
+  methods: {
+    onButtonClick: function() {
+      window.open(
+        "https://api.whatsapp.com/send?phone=" +
+          this.phoneInputResults.formattedNumber.substring(1),
+        "_blank"
+      );
+    }
   }
 };
 </script>
@@ -25,15 +29,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .link-button {
-  padding: 10px 10px;
+  margin: 2.5vh 0px;
+  padding: 10px 100px;
   border-style: solid;
   border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background-color: #aaffba;
 }
-a.link-button {
-  color: #42b983;
-}
-
-p.link-button {
-  color: #c0c0c0;
+button:disabled,
+button[disabled] {
+  cursor: default;
+  background-color: #fafafa;
+  border-color: #d2d2d2;
+  color: #d2d2d2;
 }
 </style>

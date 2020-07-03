@@ -12,7 +12,6 @@
 
 <script>
 import VuePhoneNumberInput from "vue-phone-number-input";
-import "vue-phone-number-input/dist/vue-phone-number-input.css";
 import OutputUrl from "./OutputUrl.vue";
 
 export default {
@@ -30,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style src="vue-phone-number-input/dist/vue-phone-number-input.css">
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
