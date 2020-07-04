@@ -32,10 +32,11 @@ export default {
   margin: 2.5vh 0px;
   padding: 10px 100px;
   border-style: solid;
-  border-radius: 10px;
+  border-width: 1.5px;
+  border-radius: 5px;
   outline: none;
   cursor: pointer;
-  background-color: #aaffba;
+  background-color: #98fb98;
 }
 button:disabled,
 button[disabled] {
