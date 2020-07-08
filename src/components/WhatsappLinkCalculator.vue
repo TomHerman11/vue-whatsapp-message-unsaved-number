@@ -5,6 +5,7 @@
       v-model="phoneNumber"
       @update="results = ($event)"
       default-country-code="IL"
+      :preferred-countries="['IL', 'US']"
     />
     <OutputUrl :phoneInputResults="results" />
   </div>
