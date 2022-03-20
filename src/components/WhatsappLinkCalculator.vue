@@ -3,9 +3,9 @@
     <h3>Enter phone number:</h3>
     <VuePhoneNumberInput
       v-model="phoneNumber"
-      @update="results = ($event)"
-      default-country-code="IL"
-      :preferred-countries="['IL', 'US']"
+      @update="results = $event"
+      default-country-code="US"
+      :preferred-countries="['US', 'IL']"
     />
     <OutputUrl :phoneInputResults="results" />
   </div>
@@ -20,14 +20,14 @@ export default {
   name: "WhatsappLinkCalculator",
   components: {
     VuePhoneNumberInput,
-    OutputUrl
+    OutputUrl,
   },
   data: () => {
     return {
       phoneNumber: "",
-      results: {}
+      results: {},
     };
-  }
+  },
 };
 </script>
 
